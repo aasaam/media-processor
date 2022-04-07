@@ -34,18 +34,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - shell: bash
-        env:
-          GEOIPUPDATE_ACCOUNT_ID: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
-          GEOIPUPDATE_LICENSE_KEY: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
         run: |
-          docker build -t aasaam/media-container .
-          docker push aasaam/media-container
-          docker tag aasaam/media-container ghcr.io/aasaam/media-container:latest
-          docker push ghcr.io/aasaam/media-container:latest
+          docker build -t aasaam/media-processor .
+          docker push aasaam/media-processor
+          docker tag aasaam/media-processor ghcr.io/aasaam/media-processor:latest
+          docker push ghcr.io/aasaam/media-processor:latest
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_PASS }}
-          repository: aasaam/media-container
+          repository: aasaam/media-processor
