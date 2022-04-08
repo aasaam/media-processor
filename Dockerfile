@@ -21,6 +21,7 @@ COPY --from=builder /tmp/mozjpeg/cjpeg-static /usr/local/bin/mozjpeg
 RUN apk add --no-cache \
   font-noto-arabic \
   font-noto \
+  exiftool \
   ca-certificates \
   imagemagick \
   ffmpeg \
