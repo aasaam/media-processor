@@ -3,7 +3,7 @@
     Media Processor
   </h1>
   <p>
-    Docker image contain tools for media process
+    Image contain file and multimedia tools
   </p>
   <p>
     <a href="https://github.com/aasaam/media-processor/actions/workflows/build.yml" target="_blank"><img src="https://github.com/aasaam/media-processor/actions/workflows/build.yml/badge.svg" alt="build" /></a>

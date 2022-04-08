@@ -35,7 +35,7 @@ jobs:
 
       - shell: bash
         run: |
-          docker build -t aasaam/media-processor .
+          docker build -f Dockerfile -t aasaam/media-processor .
           docker push aasaam/media-processor
           docker tag aasaam/media-processor ghcr.io/aasaam/media-processor:latest
           docker push ghcr.io/aasaam/media-processor:latest
