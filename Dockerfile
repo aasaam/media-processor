@@ -1,11 +1,9 @@
-FROM debian:bullseye-slim as builder
+FROM alpine as builder
 
-ARG DEBIAN_FRONTEND=noninteractive
 ARG MOZJPEG_VERSION='v4.0.3'
 
-RUN apt update && \
-  apt upgrade -y && \
-  apt install build-essential cmake curl wget nasm autoconf libpng-dev -y
+RUN apk add --no-cache \
+  autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev curl cmake ca-certificates
 
 RUN cd /tmp && \
   curl -L -o mozjpeg.tgz "https://github.com/mozilla/mozjpeg/archive/refs/tags/${MOZJPEG_VERSION}.tar.gz" && \
@@ -13,7 +11,7 @@ RUN cd /tmp && \
   export MOZJPEG_PATH=`realpath /tmp/mozjpeg-*` && \
   mv $MOZJPEG_PATH /tmp/mozjpeg && \
   cd /tmp/mozjpeg && \
-  cmake -G"Unix Makefiles" -DENABLE_SHARED=0 -DENABLE_STATIC=1 . && \
+  cmake -G"Unix Makefiles" -DENABLE_SHARED=0 -DENABLE_STATIC=1 -DPNG_SUPPORTED=NO . && \
   make
 
 FROM alpine
