@@ -29,4 +29,5 @@ RUN apk add --no-cache \
   shared-mime-info \
   perl-archive-zip \
   gifsicle \
+  pngquant \
   curl
