@@ -27,5 +27,6 @@ RUN apk add --no-cache \
   ffmpeg \
   file \
   shared-mime-info \
+  perl-archive-zip \
   gifsicle \
   curl
