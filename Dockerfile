@@ -26,6 +26,7 @@ RUN apk add --no-cache \
   imagemagick \
   ffmpeg \
   file \
+  fribidi \
   shared-mime-info \
   perl-archive-zip \
   gifsicle \
