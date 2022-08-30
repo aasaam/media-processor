@@ -1,6 +1,6 @@
 FROM alpine as builder
 
-ARG MOZJPEG_VERSION='v4.0.3'
+ARG MOZJPEG_VERSION='v4.1.1'
 
 RUN apk add --no-cache \
   autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev curl cmake ca-certificates
