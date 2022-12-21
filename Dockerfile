@@ -29,6 +29,7 @@ RUN apk add --no-cache \
   fribidi \
   shared-mime-info \
   perl-archive-zip \
+  perl-file-mimeinfo \
   gifsicle \
   pngquant \
   curl
