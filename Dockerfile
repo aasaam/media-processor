@@ -27,6 +27,7 @@ RUN apk add --no-cache \
   ffmpeg \
   file \
   fribidi \
+  libheif-tools \
   shared-mime-info \
   perl-archive-zip \
   perl-file-mimeinfo \
